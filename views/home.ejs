@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+
+    <img src="cfg.png" alt="Image of a document with a text of CFG" class="site-image">
+    <p class="image-text">The Chinese Fail Gang Blog Site</p>
+    <br>
+    <p class="disclaimer">Disclaimer: This is a website project build for fun mainly with Node.js, EJS, and MongoDB.</p>
+    <h1 class="homeh1">Home</h1>
+    <p class="homecontent contentfont">
+        <%= homeContent %>
+    </p>
+
+    <br>
+
+    <% newPosts.forEach(function(newPosts) { %>
+
+        <h1 class="posttitle contentfont">
+            <%= newPosts.title %>
+        </h1>
+        <p class="postcontent contentfont">
+            <%= (newPosts.content).substring(0, 100) + "..... " %>
+                <a href="/posts/<%=newPosts._id%>">Read More</a>
+        </p>
+
+        <% }); %>
+
+            <%- include("partials/footer"); -%>
